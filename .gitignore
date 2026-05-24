@@ -1,0 +1,24 @@
+# Temporary Office files
+~$*
+.~lock.*
+
+# Local processing workspace
+work_docx/
+
+# Large or regenerated data files
+data/raw/
+data/external/
+data/interim/
+data/processed/
+
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
