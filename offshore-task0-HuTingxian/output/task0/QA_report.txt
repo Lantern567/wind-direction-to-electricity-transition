@@ -1,0 +1,40 @@
+任务零 v1.0 QA 报告
+========================================
+N_farms: 171
+N_turbines_in_farms: 15,082 (2024活跃, 归于171农场)
+N_noise_points: 14 (DBSCAN正常噪声)
+N_substations: 500 (已在S1剔除)
+eps: 5.0km, min_samples: 3
+ERA5 coverage: 171/171 (含日本补下载 41-44N 139-143E)
+year range: 2014-2024, cumulative
+layout_geometry records: 1,203 (2014-2024逐年)
+layout_types (2024): belt=74, cluster=48, rule_grid=24, multi_cluster=21, sparse=4
+
+验收标准:
+  [PASS] farm_id唯一性: 171 farms, 无重复
+  [PASS] 年份口径: 2014-2024
+  [PASS] 台数自洽: 15082+14=15096 (2024活跃turbine)
+  [PASS] 升压站零混入: 500座已剔除
+  [PASS] 聚类可复现: eps=5.0km, 邻域稳定
+  [PASS] ERA5 100%覆盖: 171/171 (含日本补丁)
+  [PASS] 主键可join: 所有产物以 farm_id 为key
+
+Issues: 0
+
+补丁 2026-06-26:
+  + candidate_substations.csv: 500 座
+  + farm_boundaries.geojson: 171 场
+  + turbine_coordinates.csv: 90403 行
+  + turbine_curves.csv: 132 行 (3 机型)
+
+
+α-shape 回退说明:
+  方法: α-shape (alpha=3.0) 优先, 失败回退凸包
+  α-shape 成功: 166 场
+  凸包回退: 5 场
+    Farm 157: 7 turbines, reason=geom_type=GeometryCollection
+    Farm 167: 3 turbines, reason=<4 turbines, convex default
+    Farm 168: 3 turbines, reason=<4 turbines, convex default
+    Farm 169: 3 turbines, reason=<4 turbines, convex default
+    Farm 170: 3 turbines, reason=<4 turbines, convex default
+  All 171 farms have valid boundary polygons.

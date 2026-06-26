@@ -1,0 +1,32 @@
+﻿table,column,type,description
+points_clean,turbine_id,int,唯一风机编号，从1开始
+points_clean,lon,float (deg),经度，WGS84
+points_clean,lat,float (deg),纬度，WGS84
+points_clean,x_km,float (km),等距投影x坐标
+points_clean,y_km,float (km),等距投影y坐标
+points_clean,point_role,enum,turbine / substation / unknown
+points_clean,commission_year,int,首次 offshore wind turbine 的年份
+points_clean,first_quarter,str,首次非open sea的季度，如 2016Q1
+turbines_by_year,turbine_id,int,同 points_clean
+turbines_by_year,year,int (2014-2024),存量年份
+clusters_raw,cluster_label,int,DBSCAN 簇标签，-1=噪声
+clusters_raw,farm_id,int,有效风场编号，-1=碎片或噪声
+clusters_raw,is_fragment,int (0 or 1),1=碎片（<3台或噪声），0=有效风场
+farms_master,farm_id,int,风场唯一编号，主键
+farms_master,n_turb,int,2024年该场风机台数
+farms_master,area_km2,float (km^2),凸包面积
+farms_master,capacity_kW,float (kW),装机容量
+farms_master,avg_depth_m,float (m),平均水深，负值=水下
+farms_master,country,str,农场质心所在国家
+layout_geometry,farm_id,int,风场编号
+layout_geometry,year,int (2014-2024),年份
+layout_geometry,n_turb,int,该年活跃风机数
+layout_geometry,pc1_angle,float (deg),PCA第一主成分方向角
+layout_geometry,pc1_share,float (0-1),PC1解释方差比例
+layout_geometry,aspect_ratio,float,主轴长宽比
+layout_geometry,spacing_d,float,标准化间距=NNdist / D
+layout_geometry,ce_r,float,Clark-Evans规则性指数
+layout_geometry,layout_type,enum,rule_grid / belt / cluster / multi_cluster / sparse
+farm_era5_link,coverage_flag,int (0 or 1),1=ERA5数据覆盖
+turbine_params,turbine_model,str,机型名: nrel_5MW / iea_10MW / iea_15MW
+turbine_params,param_source,str,参数来源: ref_model

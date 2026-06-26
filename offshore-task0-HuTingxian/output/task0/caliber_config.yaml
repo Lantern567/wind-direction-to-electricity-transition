@@ -1,0 +1,201 @@
+# 任务零 统一数据底座 — 口径配置参数
+# 版本: v1.0 (冻结, 2026-06-25)
+# 负责人: HuTingxian
+#
+# 本文件定义了全部下游任务必须遵守的九个统一维度。
+# 任何口径变更必须升版本号并同步两位负责人, 禁止单边修改。
+
+# ============================================================
+# 维度1: 全部输入数据源及获取方式
+# ============================================================
+input_data_sources:
+
+  - name: DeepOWT (全球海上风机点位)
+    version: v2.25.1
+    url: https://zenodo.org/records/17121863
+    doi: 10.5281/zenodo.17121863
+    file: DeepOWT.geojson
+    size: 20 MB
+    access_date: 2026-06-17
+    description: >
+      德国航空航天中心(DLR)发布, 基于 Sentinel-1 SAR + CNN 检测,
+      覆盖 2016Q1-2025Q1, 含4种标签 (open sea/under construction/
+      offshore wind turbine/offshore wind farm substation)。
+
+  - name: ERA5 全球大气再分析 (逐小时风速风向)
+    source: ECMWF Copernicus Climate Data Store (CDS)
+    url: https://cds.climate.copernicus.eu
+    dataset: reanalysis-era5-single-levels
+    variables: [100m_u_component_of_wind, 100m_v_component_of_wind]
+    resolution: 0.25 degree
+    years: 2014-2024
+    regions:
+      east_asia:  [41N, 104E, 8N, 142E]
+      europe:      [63N, 10W, 39N, 22E]
+      us_east:     [42N, 77W, 36N, 69W]
+      japan_patch: [44N, 139E, 41N, 143E]
+    total_files: 44 (33 + 11 Japan)
+    total_size: ~15 GB
+    access_date: 2026-06-17 to 2026-06-26
+    download_script: D:/1风力发电实习/offshore-task1/batch_download_era5.py
+    note: >
+      需注册 CDS 账号, 接受许可协议, 通过 cdsapi Python 库下载。
+
+  - name: GEBCO 全球水深数据
+    version: GEBCO_2024
+    url: https://www.gebco.net/data_and_products/gridded_bathymetry_data/
+    alt_url: https://s3.us-west-2.amazonaws.com/us-west-2.opendata.source.coop/alexgleith/gebco-2024/GEBCO_2024.tif
+    file: GEBCO_2024.tif
+    format: Cloud-Optimized GeoTIFF
+    size: 4.3 GB
+    resolution: 15 arc-second (~450 m)
+    access_date: 2026-06-19
+    usage: 提取每台风机位置的水深值, 生成 turbine_depth.csv
+
+  - name: IEA/NREL 参考风机机型参数
+    source: NREL FLORIS GitHub 仓库
+    url_base: https://raw.githubusercontent.com/NREL/floris/main/floris/turbine_library/
+    files:
+      - nrel_5MW.yaml  (NREL TP-500-38060, Jonkman et al. 2009)
+      - iea_10MW.yaml  (IEA Wind Task 37, Bortolotti et al. 2019)
+      - iea_15MW.yaml  (IEA Wind TCP, Gaertner et al. 2020)
+    size: 共 13 KB
+    access_date: 2026-06-17
+    usage: 提供功率曲线 P(V) 与推力系数曲线 CT(V), 以及 D/H/Pr 参数
+
+# ============================================================
+# 维度2: 年份口径
+# ============================================================
+year_range:
+  start: 2014
+  end: 2024
+  mode: cumulative
+  definition: >
+    每年 = 截至该年12月31日处于运行状态(offshore wind turbine)的全部风机。
+    commission_year 定义为每台风机首次出现 'offshore wind turbine' 的年份。
+    2016Q1 已标记为 offshore wind turbine 的点位, commission_year 保守推定为 2014。
+    11 个年度切片: 2014, 2015, ..., 2024。
+  note: >
+    识别报告原先使用的 2016–2025 轴已被本口径替代。
+
+# ============================================================
+# 维度3: 升压站剔除规则
+# ============================================================
+substation_rule:
+  method: direct_label
+  description: >
+    DeepOWT 的季度状态列包含 'offshore wind farm substation' 标签。
+    该标签由 DLR 两级 CNN 根据 Sentinel-1 SAR 影像中升压站
+    不同于风机叶片旋转的雷达后向散射特征而完成分类。
+    首次出现非 'open sea' 的标签为 'offshore wind farm substation'
+    的点位, 标记为 point_role=substation, 不参与聚类与后续分析。
+  substation_count: 500
+  turbine_count: 15106
+
+# ============================================================
+# 维度4: DBSCAN 聚类参数
+# ============================================================
+dbscan:
+  eps_km: 5.0
+  min_samples: 3
+  metric: euclidean
+  coordinate_system: >
+    经纬度通过 111.32 km/deg (纬向乘 cos(lat)) 转换为等距 km 坐标后
+    输入 DBSCAN。eps 敏感性扫描已在 [1.0, 1.5, 2.0, 2.5, 3.0, 4.0,
+    5.0, 6.0, 8.0, 10.0] km 上完成, 确认 N_farms=171 在 5.0km 邻域稳定。
+  clustering_object: >
+    以 2024Q4 处于 offshore wind turbine 或 under construction
+    的 15,096 台纯 turbine 点位作为全期最终态, 聚类只进行一次。
+
+# ============================================================
+# 维度5: 最小风场规模
+# ============================================================
+min_turbines: 3
+fragment_rule: >
+  聚类后 < 3 台 turbine 的簇标记为 fragment (is_fragment=1),
+  保留在数据中但不分配 farm_id。
+
+# ============================================================
+# 维度6: 机型优先级
+# ============================================================
+turbine_priority:
+  method: unified_reference  # 统一参考机型, 不随年份变化
+  model: iea_10MW
+  D_m: 198
+  H_m: 119
+  Pr_kW: 10000
+  source: IEA Wind Task 37 (Bortolotti et al. 2019)
+  rationale: >
+    选择 IEA 10MW 作为全局统一参考机型的三点依据:
+    1. 它是三篇顶刊论文的共性选择 — Jung 2022 固定2020年机组构成,
+       Lei 2023 全用SL3000单机型, Xu 2026 以10MW为敏感性中值;
+       三篇都不按年份分档, 以避免"机型代际差异"与"年际风况变化"混淆。
+    2. 10MW 在物理上接近全球海上风机的当前装机水平,
+       且轮毂高度(119m)与ERA5 100m高度相邻, 外推误差小于5MW(90m)和15MW(150m)。
+    3. 后续任务二将对代表风场做多机型敏感性分析(5/10/15MW),
+       在单机型底座上叠加敏感性层, 既保证基准结果不受机型混淆影响,
+       又能检验结论的机型稳健性。
+  param_source_label: ref_model (IEA 10MW unified)
+  literature_support: >
+    Jung & Schindler (2022, Nature Energy) 使用按轮毂高度分档的
+    典型机型替代法; Xu et al. (2026, Nature Communications) 使用
+    6/8/10MW 三档典型海上机型做敏感性分析, 均不逐台匹配。
+  param_source_label: ref_model
+
+# ============================================================
+# 维度7: ERA5 取样规则
+# ============================================================
+era5_sampling:
+  variable: 100m_u_component_of_wind / 100m_v_component_of_wind
+  source: ECMWF ERA5 reanalysis
+  resolution: 0.25 degree
+  grid_matching: >
+    以每个 farm_id 的质心经纬度, 取最近 ERA5 0.25° 格点的
+    逐小时 u/v 分量, 合成风速 = sqrt(u^2 + v^2),
+    风向 = atan2(u, v) + 180°。
+  height_correction: >
+    V_H = V_100 * (H / 100)^α, α = 0.11 (海上默认值)。
+  coverage: >
+    三区域下载覆盖 (东亚 8°-41°N 104°-142°E,
+    欧洲 39°-63°N 10°W-22°E, 美国 36°-42°N 77°-69°W),
+    补 日本北海道区域 (41°-44°N 139°-143°E) 后实现 171/171 全覆盖。
+
+# ============================================================
+# 维度8: Schema 字典
+# ============================================================
+schema:
+  tables:
+    points_clean:
+      fields: [turbine_id, lon, lat, x_km, y_km, point_role, commission_year, first_quarter, first_status]
+      units: {lon: deg, lat: deg, x_km: km, y_km: km}
+      enums: {point_role: [turbine, substation, unknown]}
+    turbines_by_year:
+      fields: [turbine_id, year, lon, lat, x_km, y_km, point_role, commission_year]
+      units: {year: integer (2014-2024)}
+    farms_master:
+      fields: [farm_id, n_turb, centroid_lon, centroid_lat, area_km2, capacity_kW, density_per_km2, avg_depth_m, country]
+      units: {area_km2: km^2, capacity_kW: kW, avg_depth_m: m}
+    layout_geometry:
+      fields: [farm_id, year, n_turb, centroid_lon, centroid_lat, pc1_angle, pc1_share, aspect_ratio, spacing_d, ce_r, layout_type]
+      enums: {layout_type: [rule_grid, belt, cluster, multi_cluster, sparse]}
+      units: {pc1_angle: deg, spacing_d: dimensionless (NNdist/D), ce_r: dimensionless}
+    farm_era5_link: {fields: [farm_id, centroid_lat, centroid_lon, coverage_flag], enums: {coverage_flag: [0, 1]}}
+    turbine_params: {fields: [turbine_id, farm_id, commission_year, turbine_model, param_source], enums: {param_source: [ref_model]}}
+
+# ============================================================
+# 维度9: 版本控制
+# ============================================================
+version_control:
+  git_repo: D:/1风力发电实习/offshore-task0
+  current_version: v1.0
+  freeze_date: 2026-06-25
+  signoff:
+  - name: HuTingxian
+    date: 2026-06-26
+    status: approved
+  - name: 琪明
+    date: (pending)
+    status: pending
+  hash: sha256:待补(全部产物打包后计算)
+  change_log:
+    - v1.0: 初始冻结, eps=5.0km, 171 farms
