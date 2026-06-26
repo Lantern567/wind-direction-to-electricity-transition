@@ -1,3 +1,0 @@
-model,n,pseudo_r2,coef_WPD,p_WPD,coef_WCI,p_WCI,coef_spacingD,p_spacingD,coef_area,p_area,key_finding,r2,coef_year,p_year
-Logit_Expansion_P(expand),171,0.162,-0.046,0.819,0.152,0.405,-0.393,0.066,3.5,0.0001,Farm area and spacing (not wind) drive expansion probability,,,
-OLS_SpacingD_trend,289,,,,0.6766,0.8447,,,,,No significant SpacingD temporal trend,0.011,-0.2888,0.0737
