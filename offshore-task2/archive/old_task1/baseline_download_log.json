@@ -1,0 +1,19 @@
+{
+  "completed": [
+    "b_east_asia_b1981_1990",
+    "b_east_asia_b1991_2000"
+  ],
+  "failed": {},
+  "downloads": [
+    {
+      "job_id": "b_east_asia_b1981_1990",
+      "size_mb": 344.9,
+      "elapsed_sec": 4084
+    },
+    {
+      "job_id": "b_east_asia_b1991_2000",
+      "size_mb": 344.3,
+      "elapsed_sec": 3259
+    }
+  ]
+}

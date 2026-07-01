@@ -1,0 +1,205 @@
+{
+  "completed": [
+    "east_asia_2014",
+    "east_asia_2015",
+    "east_asia_2016",
+    "east_asia_2017",
+    "east_asia_2018",
+    "east_asia_2019",
+    "east_asia_2020",
+    "east_asia_2021",
+    "east_asia_2022",
+    "east_asia_2023",
+    "east_asia_2024",
+    "europe_2014",
+    "europe_2015",
+    "europe_2016",
+    "europe_2017",
+    "europe_2018",
+    "europe_2019",
+    "europe_2020",
+    "europe_2021",
+    "europe_2022",
+    "europe_2023",
+    "europe_2024",
+    "us_east_2014",
+    "us_east_2015",
+    "us_east_2016",
+    "us_east_2017",
+    "us_east_2018",
+    "us_east_2019",
+    "us_east_2020",
+    "us_east_2021",
+    "us_east_2022",
+    "us_east_2023",
+    "us_east_2024"
+  ],
+  "failed": {},
+  "downloads": [
+    {
+      "job_id": "east_asia_2014",
+      "size_mb": 834.5,
+      "elapsed_sec": 9089
+    },
+    {
+      "job_id": "east_asia_2015",
+      "size_mb": 828.3,
+      "elapsed_sec": 313
+    },
+    {
+      "job_id": "east_asia_2016",
+      "size_mb": 826.5,
+      "elapsed_sec": 1024
+    },
+    {
+      "job_id": "east_asia_2017",
+      "size_mb": 830.9,
+      "elapsed_sec": 312
+    },
+    {
+      "job_id": "east_asia_2018",
+      "size_mb": 827.4,
+      "elapsed_sec": 581
+    },
+    {
+      "job_id": "east_asia_2019",
+      "size_mb": 834.4,
+      "elapsed_sec": 1451
+    },
+    {
+      "job_id": "east_asia_2020",
+      "size_mb": 836.9,
+      "elapsed_sec": 1357
+    },
+    {
+      "job_id": "east_asia_2021",
+      "size_mb": 830.6,
+      "elapsed_sec": 1353
+    },
+    {
+      "job_id": "east_asia_2022",
+      "size_mb": 831.6,
+      "elapsed_sec": 1336
+    },
+    {
+      "job_id": "east_asia_2023",
+      "size_mb": 832.7,
+      "elapsed_sec": 1224
+    },
+    {
+      "job_id": "east_asia_2024",
+      "size_mb": 836.4,
+      "elapsed_sec": 2073
+    },
+    {
+      "job_id": "europe_2014",
+      "size_mb": 526.9,
+      "elapsed_sec": 3353
+    },
+    {
+      "job_id": "europe_2015",
+      "size_mb": 530.8,
+      "elapsed_sec": 2753
+    },
+    {
+      "job_id": "europe_2016",
+      "size_mb": 536.8,
+      "elapsed_sec": 3959
+    },
+    {
+      "job_id": "europe_2017",
+      "size_mb": 534.1,
+      "elapsed_sec": 4960
+    },
+    {
+      "job_id": "europe_2018",
+      "size_mb": 538.2,
+      "elapsed_sec": 5718
+    },
+    {
+      "job_id": "europe_2019",
+      "size_mb": 539.8,
+      "elapsed_sec": 6223
+    },
+    {
+      "job_id": "europe_2020",
+      "size_mb": 536.3,
+      "elapsed_sec": 8415
+    },
+    {
+      "job_id": "europe_2021",
+      "size_mb": 535.7,
+      "elapsed_sec": 11291
+    },
+    {
+      "job_id": "europe_2022",
+      "size_mb": 529.9,
+      "elapsed_sec": 29451
+    },
+    {
+      "job_id": "europe_2023",
+      "size_mb": 531.0,
+      "elapsed_sec": 1211
+    },
+    {
+      "job_id": "europe_2024",
+      "size_mb": 533.9,
+      "elapsed_sec": 2020
+    },
+    {
+      "job_id": "us_east_2014",
+      "size_mb": 35.4,
+      "elapsed_sec": 1067
+    },
+    {
+      "job_id": "us_east_2015",
+      "size_mb": 37.2,
+      "elapsed_sec": 1507
+    },
+    {
+      "job_id": "us_east_2016",
+      "size_mb": 39.2,
+      "elapsed_sec": 1387
+    },
+    {
+      "job_id": "us_east_2017",
+      "size_mb": 39.1,
+      "elapsed_sec": 2128
+    },
+    {
+      "job_id": "us_east_2018",
+      "size_mb": 37.3,
+      "elapsed_sec": 2373
+    },
+    {
+      "job_id": "us_east_2019",
+      "size_mb": 39.2,
+      "elapsed_sec": 2741
+    },
+    {
+      "job_id": "us_east_2020",
+      "size_mb": 39.2,
+      "elapsed_sec": 2867
+    },
+    {
+      "job_id": "us_east_2021",
+      "size_mb": 39.0,
+      "elapsed_sec": 3381
+    },
+    {
+      "job_id": "us_east_2022",
+      "size_mb": 35.3,
+      "elapsed_sec": 3824
+    },
+    {
+      "job_id": "us_east_2023",
+      "size_mb": 35.4,
+      "elapsed_sec": 4105
+    },
+    {
+      "job_id": "us_east_2024",
+      "size_mb": 39.3,
+      "elapsed_sec": 4319
+    }
+  ]
+}
