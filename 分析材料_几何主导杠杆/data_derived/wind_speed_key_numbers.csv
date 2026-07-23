@@ -1,0 +1,9 @@
+﻿series,analysis,value,note
+A1,跨场 WakeLoss~ws_mean,-0.035,弱→风速非跨场尾流主因
+A1b,跨场 WakeLoss~high_wind,-0.081,high_wind代理
+A2,场内 ΔWL~Δws(去均值),-0.199,"场内更干净,风大年尾流低"
+A3,偏相关 控spacing后 WL~ws,-0.034,控密度后风速效应消失
+B1,CF~ws_mean,0.92,风速主导发电水平(外生)
+B2_cv,CF年际CV中位(%),5.2,风年噪声~5.2%
+B2_orient,朝向优化(%),0.92,"S1刚性旋转,可控但极小"
+B2_geom,几何优化POC中位(%),6.2,唯一能压过风年噪声的可控杠杆

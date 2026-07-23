@@ -1,0 +1,67 @@
+{
+  "wakeloss_gauss": {
+    "n_farmyear": 1203,
+    "mean_pct": 13.46,
+    "median_pct": 12.44,
+    "p90_pct": 23.13,
+    "max_pct": 51.69,
+    "share_over_25pct": 7.9,
+    "share_over_20pct": 16.9
+  },
+  "regional": {
+    "east_asia": {
+      "cf_pct": 37.6,
+      "wl_pct": 10.9,
+      "n": 502
+    },
+    "europe": {
+      "cf_pct": 46.9,
+      "wl_pct": 15.6,
+      "n": 686
+    },
+    "us_east": {
+      "cf_pct": 53.4,
+      "wl_pct": 3.7,
+      "n": 15
+    }
+  },
+  "spacing_d": {
+    "n": 171,
+    "median_D": 3.32,
+    "mean_D": 3.67,
+    "p25_D": 2.64,
+    "p75_D": 4.25,
+    "min_D": 0.91,
+    "max_D": 11.42,
+    "share_under_5D": 84.8,
+    "share_under_7D": 94.7
+  },
+  "spacing_vs_wakeloss": {
+    "n": 171,
+    "spearman_rho": -0.25,
+    "p": 0.0009860279918363904
+  },
+  "proximity": {
+    "n_farms": 171,
+    "pairs_edge_under_10km": 30,
+    "pairs_center_under_20km": 34,
+    "pairs_center_under_30km": 72,
+    "farms_with_neighbour_edge_under_10km": 52,
+    "share_farms_with_neighbour_pct": 30.4
+  },
+  "orientation_opt": {
+    "n_farmyear": 1203,
+    "mean_gain_pct": 0.92,
+    "median_gain_pct": 0.28,
+    "p25_pct": 0.0,
+    "p75_pct": 1.19,
+    "win_rate_pct": 64.3
+  },
+  "deviation": {
+    "n": 167,
+    "mean_abs_deg": 47.3,
+    "median_abs_deg": 51.2,
+    "share_over_30deg": 70.1,
+    "share_over_60deg": 41.9
+  }
+}

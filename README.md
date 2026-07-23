@@ -16,6 +16,7 @@
 
 ## Repository Map
 
+- `分析材料_几何主导杠杆/`: 「几何胜于对齐」分析材料——正文文档（`分析材料_几何胜于对齐.md/.docx/.pdf`）、派生数据（`data_derived/`）、图 1–7 的绘图脚本与成图（`figures/`），以及 `build_derived.py`/`build_docx.py` 构建脚本。
 - `manuscript/source-word/`: 本地 Word 原稿。
 - `manuscript/research-plan.md`: Result 框架、研究背景、识别模型和完整研究方案。
 - `manuscript/one-page-concept.md`: 一页研究构想。

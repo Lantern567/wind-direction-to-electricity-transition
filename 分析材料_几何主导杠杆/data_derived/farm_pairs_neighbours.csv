@@ -1,0 +1,31 @@
+farm_i,farm_j,country_i,country_j,center_km,edge_gap_km
+0,3,China,China,39.89,-2.21
+14,78,China,China,15.12,0.83
+31,113,Netherlands,Netherlands,13.06,1.32
+12,90,China,China,15.19,2.14
+9,123,United Kingdom,United Kingdom,14.5,2.24
+0,24,China,China,38.88,2.9
+35,72,China,China,12.95,3.22
+26,87,United Kingdom,United Kingdom,17.08,3.97
+23,65,Netherlands,Netherlands,15.61,4.51
+29,95,Sweden,Sweden,15.21,4.84
+146,156,United States of America,United States of America,11.21,5.18
+95,127,Sweden,Sweden,12.96,5.43
+9,80,United Kingdom,United Kingdom,22.1,5.8
+147,168,China,China,7.22,6.18
+138,146,United States of America,United States of America,16.03,7.08
+81,124,China,China,12.34,7.21
+57,130,Vietnam,Vietnam,13.79,8.26
+38,118,China,China,17.61,8.34
+37,66,China,China,20.12,8.37
+94,108,China,China,15.39,8.4
+7,18,Netherlands,Germany,28.25,8.86
+85,103,China,China,15.81,9.06
+7,23,Netherlands,Netherlands,26.38,9.39
+51,53,United Kingdom,United Kingdom,22.36,9.51
+138,156,United States of America,United States of America,18.8,9.56
+13,84,United Kingdom,United Kingdom,22.45,9.77
+52,101,China,China,18.42,9.77
+112,141,Vietnam,Vietnam,13.24,9.77
+27,59,Denmark,Denmark,21.88,9.82
+33,77,China,China,23.51,9.85
