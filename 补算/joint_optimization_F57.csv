@@ -1,0 +1,4 @@
+﻿scenario,sx_best_D,sy_best_D,AEP_kWh,gain_pct_vs_real,note
+real,-,-,906819552.75,0.0,"F57: 80 turb Vietnam, actual spacing ~1.9D"
+built_opt_geom,8.0,12.0,1478492143.35,63.0,"real spacing ~1.9D, optimized to 8Dx12D"
+rotated_opt_joint,8.0,12.0,1511747754.2,66.7,rotated to theta_opt=40deg THEN optimized to 8Dx12D
