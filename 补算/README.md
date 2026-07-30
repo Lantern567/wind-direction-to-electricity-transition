@@ -12,19 +12,18 @@
 ├── README_数据说明.docx                # 廷显交付数据说明
 ├── Supplementary_Analysis_Report.docx  # 最终报告（output/）
 │
-├── 廷显交付数据/
-│   ├── reference_wake_table.csv       # 参考尾流表（36风向×19风速）
-│   ├── high_gain_wind_roses.csv       # 7场30年逐日风向（ERA5 baseline）
-│   ├── jensen_rotation_56farms.csv    # Jensen旋转重跑75场
-│   ├── ow_sensitivity_3farms.csv      # 机型敏感性（3场×3机型）
-│   └── joint_optimization_F57.csv     # F57联合优化
+├── reference_wake_table.csv            # 参考尾流表（36风向×19风速）
+├── high_gain_wind_roses.csv            # 7场30年逐日风向（ERA5 baseline）
+├── jensen_rotation_56farms.csv         # Jensen旋转重跑75场
+├── ow_sensitivity_3farms.csv           # 机型敏感性（3场×3机型）
+├── joint_optimization_F57.csv          # F57联合优化
+├── corridor_aep_validation(1).csv      # 全量1,446格点FLORIS验证
 │
-├── 分析脚本/
-│   ├── task1_corridor_atlas_v3.py     # 走廊图谱（Fig 4）
-│   ├── task4_8_remaining.py           # 乘积回归+置换+赌注核算
-│   ├── task5_wind_rose_verification.py # 风玫瑰+扰动测试
-│   ├── task6_bootstrap_ci.py          # 聚类Bootstrap
-│   └── generate_final_report.py       # 最终报告生成器
+├── generate_final_report.py            # 最终报告生成器
+├── task1_corridor_atlas_v3.py          # 走廊图谱（Fig 4）
+├── task4_8_remaining.py                # 乘积回归+置换+赌注核算
+├── task5_wind_rose_verification.py     # 风玫瑰+扰动测试
+├── task6_bootstrap_ci.py               # 聚类Bootstrap
 │
 └── output/
     ├── Supplementary_Analysis_Report.docx  # 最终报告
@@ -45,4 +44,4 @@
 2. 仅7个农场（4.1%）超过5%，集中于季风走廊和海峡地形整流区
 3. WCI×尾流池交互项通过乘积回归（p=0.042）和置换检验（p=0.000）
 4. F57联合优化：几何+63.0% vs 朝向+3.7%（17:1）
-5. 走廊图谱识别四大高敏感海域，计划装机225GW，年损失上限23.5TWh
+5. 全量1,446格点FLORIS验证：热带A_pred=11.1%，北海1.3%，全栅格72.6TWh（2030计划17-24TWh）
