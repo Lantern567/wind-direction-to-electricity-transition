@@ -1,0 +1,6 @@
+﻿check,expected,source,status,note
+quantile_mapping_identity,rank = F_year(v_actual|d) → v_mapped = F_hist^{-1}(rank|d) → v_actual ≈ v_mapped when year ≈ hist,compute_four_scenario_aep_v6.py (廷显侧),pending_v6,v5 使用查找表概率权重，非分位数映射。v6 改为逐时 FLORIS 分位数映射后验证。
+shrinkage_lambda_distribution,"λ = N_d/(N_d+30), ∈ [0.03, 0.97] for N_d ∈ [1, 700]",compute_four_scenario_aep_v6.py (廷显侧),pending_v6,收缩参数，v5 查找表未显式使用收缩。v6 逐时计算 CDF 后验证。
+sector_sample_size_distribution,"per farm-year: 36 sectors, min N_d ≥ 1 for all sectors",compute_four_scenario_aep_v6.py (廷显侧),pending_v6,v6 分扇区 CDF 构建时自动满足。
+cdf_monotonicity,F(v) strictly non-decreasing for each sector d,compute_four_scenario_aep_v6.py (廷显侧),pending_v6,经验 CDF 天然单调。
+ws_mapped_range,"v_mapped ∈ [cut_in, cut_out] for all hours",compute_four_scenario_aep_v6.py (廷显侧),pending_v6,分位数映射的输出范围自动落入历史基准风速范围。

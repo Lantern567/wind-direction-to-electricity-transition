@@ -1,0 +1,8 @@
+﻿step,timestamp,status,detail
+init,2026-08-09 17:20:34,OK,Script: run_floris_decomposition_v5.py | Input: four_scenario_floris_aep_v5.csv (1203 rows)
+load_s3,2026-08-09 17:20:34,OK,S3 Gauss filter: wake_model=gauss & layout_type=real → 1203 rows | P11 median err: 0.000%
+load_s1,2026-08-09 17:20:34,OK,S1 optimal orientation loaded | G available for 1203/1203 farm-years
+decompose,2026-08-09 17:20:34,OK,S+D+I closure: 9.93e-16 | Shapley closure: 5.86e-16
+farm_summary,2026-08-09 17:20:34,OK,171 farms | 108 with ≥5 years in main stats
+qa_checks,2026-08-09 17:20:34,PARTIAL,P11 ✅ | Closure ✅ | Coverage ✅ | Config-consistency ❌ (P01/P00 lookup table ≠ P11/P10 hourly FLORIS) | Reproducibility ❌ (see v6 fix)
+deliverables,2026-08-09 17:20:34,OK,4 CSV + 3 MD + N figures → D:\01学习资料\wind-direction-to-electricity-transition\四场景风速风向分解贡献\output
