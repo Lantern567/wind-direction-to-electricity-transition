@@ -1,0 +1,27 @@
+WP6a 验证报告
+============================================================
+C3 均匀方向负对照: 农场 max|A|=0.000024 pp, 格点 max|A|=0.000000 pp → 通过 (≤0.1 pp)
+5°→1°(η 插值, 农场): 半圆 |ΔA| p50=0.006 p95=0.054 max=0.270 pp
+5°→1°(η 插值, 格点): |ΔA| p50=0.007 p95=0.078 max=1.326 pp
+
+类型匹配 Spearman(模板A, 真实A[wp7a 自算(36档半圆, 与模板同口径)]): 逐模板均值 0.736 [0.644, 0.814] | 36 模板平均A vs 真实A: 0.775
+敏感性: 模板A均值 vs task3 A Spearman = 0.794
+          belt 3D: Spearman 0.798
+          belt 5D: Spearman 0.803
+          belt 7D: Spearman 0.801
+       cluster 3D: Spearman 0.687
+       cluster 5D: Spearman 0.692
+       cluster 7D: Spearman 0.660
+  multi_cluster 3D: Spearman 0.730
+  multi_cluster 5D: Spearman 0.728
+  multi_cluster 7D: Spearman 0.725
+     rule_grid 3D: Spearman 0.736
+     rule_grid 5D: Spearman 0.734
+     rule_grid 7D: Spearman 0.736
+
+嵌套走廊留出 [标签=物理模板A均值]: AUC=0.645 Spearman=0.535 前四分位捕获=40.5%
+嵌套走廊留出 [标签=真实A]:          AUC=0.498 Spearman=0.087 前四分位捕获=31.0%
+统计模型 pred_A vs 物理模板A Spearman=0.721 | vs 真实A Spearman=0.609
+
+管线设计目标: 类型匹配 Spearman≥0.5 | AUC≥0.75 | 前25%捕获≥50%
+验收红线: C3 A≤0.1 pp | 5°vs1° |ΔA|≤0.3 pp（p 重分箱与 FLORIS 直算见 wp6b）

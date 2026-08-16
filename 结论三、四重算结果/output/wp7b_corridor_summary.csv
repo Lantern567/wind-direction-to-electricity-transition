@@ -1,0 +1,4 @@
+﻿corridor,n_projects,capacity_GW,G_plan_S1_med,G_plan_S2_med,G_plan_S3_med,dE_S1_GWh,dE_S2_GWh,dE_S3_GWh,V1_share,V2_share,V3_share,pos_frac_S1_med,pos_frac_S3_med,monotonic_frac
+China_strait,8,6.13,2.92,-5.99,13.1,659.26,-1084.65,2340.94,1.0,-2.337,4.915,1.0,1.0,0.0
+Vietnam,12,5.15,1.58,-15.12,6.81,335.9,-858.63,1351.92,1.0,-5.223,7.341,1.0,1.0,0.167
+other,135,137.87,0.4,-2.69,8.76,2478.86,-6329.74,60566.54,1.0,-3.587,19.488,1.0,1.0,0.356
