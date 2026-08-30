@@ -22,3 +22,7 @@ __pycache__/
 Thumbs.db
 *.swp
 *.swo
+
+# Local scratch (root-anchored, does NOT affect per-task output/ dirs)
+/tmp/
+/output/
