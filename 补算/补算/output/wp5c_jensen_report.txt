@@ -1,0 +1,14 @@
+WP5c-J 尾流模型敏感性（jensen vs gauss 基准）
+============================================================
+S_A: A_built 中位 jensen=0.333 vs gauss=0.223 (Δ中位 +0.123pp, |Δ|中位 0.123)
+S_B0: A_built 中位 jensen=1.055 vs gauss=0.830 (Δ中位 +0.235pp, |Δ|中位 0.235)
+S_B45: A_built 中位 jensen=1.055 vs gauss=0.830 (Δ中位 +0.235pp, |Δ|中位 0.235)
+S_C: A_built 中位 jensen=0.816 vs gauss=0.542 (Δ中位 +0.254pp, |Δ|中位 0.254)
+S_D: A_built 中位 jensen=1.309 vs gauss=0.782 (Δ中位 +0.487pp, |Δ|中位 0.487)
+S_E: A_built 中位 jensen=0.331 vs gauss=0.160 (Δ中位 +0.156pp, |Δ|中位 0.156)
+S_A: 走廊中位 jensen=1.485 vs gauss=1.198；倍数 jensen=4.8x vs gauss=5.8x
+S_B0: 走廊中位 jensen=7.736 vs gauss=5.251；倍数 jensen=8.0x vs gauss=7.4x
+S_B45: 走廊中位 jensen=7.737 vs gauss=5.251；倍数 jensen=8.0x vs gauss=7.4x
+S_C: 走廊中位 jensen=4.442 vs gauss=2.910；倍数 jensen=6.2x vs gauss=5.8x
+S_D: 走廊中位 jensen=7.807 vs gauss=4.594；倍数 jensen=6.5x vs gauss=6.2x
+S_E: 走廊中位 jensen=0.939 vs gauss=0.815；倍数 jensen=3.5x vs gauss=5.5x
