@@ -33,21 +33,38 @@ import cartopy.feature as cfeature
 from matplotlib.colors import LinearSegmentedColormap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(HERE))
+DELIV = os.path.dirname(os.path.dirname(HERE))          # 重算交付_20260829
+REPO = os.path.dirname(DELIV)                           # 仓库根
 OUT = os.path.join(REPO, '补算', 'output')
+
+
+def _find(*cands):
+    """脚本归档进 图件/构建脚本/ 后相对路径改变，按候选清单定位输入。"""
+    for c in cands:
+        if os.path.isfile(c):
+            return c
+    raise FileNotFoundError('输入文件未找到，已尝试:\n  ' + '\n  '.join(cands))
+
+
 sys.path.insert(0, HERE)
 from nc_style_nat import (apply_style, panel_label, halo, RED, ORANGE, INK,
                           BOX_EC, GREY, DEEP_BLUE, GRIDLINE_COL)
 
 # ════════════════ 数据 ════════════════
-og = pd.read_csv(os.path.join(OUT, 'orientation_gain.csv'))
+og = pd.read_csv(_find(os.path.join(OUT, 'orientation_gain.csv'),
+                       os.path.join(DELIV, '补算输入', 'orientation_gain.csv')))
 og.columns = [c.strip() for c in og.columns]
 G = og.groupby('farm_id')['gain_pct'].mean()
 NY = og.groupby('farm_id')['year'].count()
 POS = og.assign(pos=og.gain_pct > 0).groupby('farm_id')['pos'].mean() * 100
-fs = pd.read_csv(os.path.join(REPO, '四场景风速风向分解贡献', 'output',
-                              'four_scenario_farm_summary_AUTHORITATIVE.csv')).set_index('farm_id')
-fm = pd.read_csv(os.path.join(OUT, 'wp9c_farm_metrics.csv')).set_index('farm_id')
+fs = pd.read_csv(_find(
+    os.path.join(REPO, '四场景风速风向分解贡献', 'output',
+                 'four_scenario_farm_summary_AUTHORITATIVE.csv'),
+    os.path.join(DELIV, '四场景v6权威数据',
+                 'four_scenario_farm_summary_AUTHORITATIVE.csv'))).set_index('farm_id')
+fm = pd.read_csv(_find(os.path.join(OUT, 'wp9c_farm_metrics.csv'),
+                       os.path.join(DELIV, '补算输入',
+                                    'wp9c_farm_metrics.csv'))).set_index('farm_id')
 
 farms = G.index
 lon = fm.loc[farms, 'cent_lon'].values.astype(float)
@@ -77,7 +94,8 @@ print('v6 越线: n>=5: %s (%.1f%%)  n>=3: %s (%.1f%%)  比值 %.2f–%.2f  F160
        ratio[cross3].min(), ratio[cross3].max(), ratio[farms.get_loc(160)]))
 
 # ════════════════ 面板 e 数据 ════════════════
-s4 = pd.read_csv(os.path.join(REPO, 'task3', 'Task3-output', 's4_balanced_gauss.csv'))
+s4 = pd.read_csv(_find(os.path.join(REPO, 'task3', 'Task3-output', 's4_balanced_gauss.csv'),
+                       os.path.join(REPO, 'Task3-output', 's4_balanced_gauss.csv')))
 real = s4[s4.layout_type == 'real'].set_index(['farm_id', 'year'])['AEP_kWh']
 rows = []
 for (fid, y), r in s4[s4.layout_type != 'real'].groupby(['farm_id', 'year']):
@@ -258,7 +276,9 @@ lg.legend([mlines.Line2D([], [], marker='*', ls='', mfc=RED, mec='white', mew=0.
 # ────────── d. 越线风场逐年增益 + 全部风场 IQR 带 ──────────
 axd = fig.add_axes([333 / W, (H - 5049) / H, (2120 - 333) / W, 1376 / H])
 gp = og.pivot_table(index='year', columns='farm_id', values='gain_pct')
-axd.set_xlim(2014, 2026)
+# 右侧留出图例带（2024 之后无数据），刻度仍止于 2024，避免误读为有 2026 数据
+axd.set_xlim(2013.6, 2028.4)
+axd.set_xticks([2014, 2016, 2018, 2020, 2022, 2024])
 axd.set_yscale('symlog', linthresh=1.0)
 axd.set_ylim(-0.35, 26)
 axd.set_yticks([0, 0.3, 1, 3, 10, 30])
@@ -267,50 +287,83 @@ axd.set_xlabel('Year')
 p50 = gp.median(axis=1); p25 = gp.quantile(0.25, axis=1); p75 = gp.quantile(0.75, axis=1)
 axd.fill_between(gp.index, p25, p75, color='#d6dbe0', alpha=0.85, zorder=1)
 axd.plot(gp.index, p50, color='#8e99a4', lw=1.5, zorder=2)
-# 线端标签错开（上/下交替 + 不同横向偏移，避免 symlog 下相邻线标签重叠）
-LAB_DX = {57: 0.2, 66: -0.2, 91: -0.2, 155: 0.2, 157: -0.2}
-LAB_DY = {57: 1.5, 66: 0.4, 91: 0.66, 155: -1.3, 157: 0.5}
-LAB_HA = {57: 'left', 66: 'right', 91: 'right', 155: 'left', 157: 'right'}
+# symlog 线性/对数分界提示（y<1 为线性段，否则 0 与 0.3 两个刻度易被误读为对数轴）
+axd.axhline(1.0, color='#b9c0c7', lw=0.6, ls=(0, (4, 3)), zorder=1.5)
+axd.text(2013.85, 1.09, 'linear scale below 1%', fontsize=6.6, color='#98a1a9',
+         va='bottom', ha='left', zorder=3)
+# 记录年数 <5 的场用虚线，与 (b) 的空心圈编码一致
+SHORT_REC = {155}
 for f in (57, 66, 91, 155, 157):
     yv = gp[f].dropna()
-    axd.plot(yv.index, yv.values, color=LINE_COL[f], lw=1.5, zorder=4,
-             marker='o', ms=2.4, mfc='white', mec=LINE_COL[f], mew=0.7)
-    axd.text(yv.index[-1] + LAB_DX[f], yv.values[-1] + LAB_DY[f], COAST[f],
-             color=LINE_COL[f], fontsize=7.2, va='center', ha=LAB_HA[f],
-             zorder=6, fontweight='bold')
+    axd.plot(yv.index, yv.values, color=LINE_COL[f], lw=1.6, zorder=4,
+             ls='--' if f in SHORT_REC else '-',
+             marker='o', ms=3.0, mfc='white', mec=LINE_COL[f], mew=0.8)
+# 全场统计图例横排放 IQR 带下方的窄空白条：upper left 压 Vietnam coast 起点，
+# 左中又压 Danish straits 的 2018 低点，只有这条窄带全程无数据
 axd.legend([plt.matplotlib.patches.Patch(facecolor='#d6dbe0', edgecolor='none'),
-            plt.Line2D([], [], color='#8e99a4', lw=1.5)],
-           ['All farms, interquartile range', 'All farms, median'],
-           loc='upper left', fontsize=9.0, handlelength=1.2, frameon=True,
-           framealpha=0.95, borderpad=0.4)
+            plt.Line2D([], [], color='#8e99a4', lw=1.5),
+            plt.Line2D([], [], color='#9aa3ab', lw=1.4, ls='--')],
+           ['All farms, IQR', 'All farms, median', '3–4 yr record'],
+           loc='lower left', bbox_to_anchor=(0.008, 0.006), fontsize=8.4,
+           ncol=3, columnspacing=1.6, handlelength=1.5, frameon=True,
+           framealpha=0.95, borderpad=0.35)
+# 五个走廊场：右下角彩色文字列表，右对齐贴版心右缘。带框图例（手柄+边框+内边距）
+# 实测宽近 850 px，会伸回 2021 压住曲线与 IQR 带；纯文字仅约 480 px，恰好落在
+# 2024 之后的留白带内，既不越出版心也不遮数据。
+ORDER = sorted((57, 66, 91, 155, 157),
+               key=lambda f: -float(gp[f].dropna().values[-1]))
+axd.text(0.995, 0.970, 'Corridor farms', transform=axd.transAxes, color='#6b7680',
+         fontsize=7.4, ha='right', va='center', zorder=6)
+for i, f in enumerate(ORDER):
+    axd.text(0.995, 0.907 - i * 0.058, COAST[f], transform=axd.transAxes,
+             color=LINE_COL[f], fontsize=8.2, fontweight='bold',
+             ha='right', va='center', zorder=6)
 for sp in ('top', 'right'):
     axd.spines[sp].set_visible(False)
 panel_label(axd, 'd', fs=16.7)
 
 # ────────── e. 集中度曲线 ──────────
 axe = fig.add_axes([2457 / W, (H - 5049) / H, (4269 - 2457) / W, 1376 / H])
-axe.set_xlim(-2, 102); axe.set_ylim(-4, 104)
+axe.set_xlim(-1.5, 101.5); axe.set_ylim(-1.5, 101.5)
 axe.set_xlabel('Cumulative share of installed capacity (%)')
 axe.set_ylabel('Cumulative share of added energy (%)')
 axe.set_xticks(np.arange(0, 101, 20)); axe.set_yticks(np.arange(0, 101, 20))
-axe.fill_between(csum_cap.values, csum_e.values, color='#2664eb', alpha=0.30, zorder=1)
-axe.plot(csum_cap.values, csum_e.values, color='#5b6770', lw=1.4, zorder=3)
-axe.scatter(csum_cap.values, csum_e.values, s=6, c=BASE_COL, linewidths=0, zorder=2)
+# 均匀参考线（无集中）——缺了它无法判断曲线偏离均匀有多远
+axe.plot([0, 100], [0, 100], ls='--', lw=1.0, color='#9aa3ab', zorder=2)
+# 蓝色只填「曲线与对角线之间」，即集中度本身的几何量（原先填曲线以下全部，
+# 无物理含义且盖住曲线形状）
+axe.fill_between(csum_cap.values, csum_cap.values, csum_e.values,
+                 color='#2664eb', alpha=0.15, lw=0, zorder=1)
+axe.plot(csum_cap.values, csum_e.values, color='#3b4650', lw=1.7, zorder=4)
+axe.scatter(csum_cap.values, csum_e.values, s=6, c=BASE_COL, linewidths=0, zorder=3)
 for f in top5:
-    axe.scatter(csum_cap.loc[f], csum_e.loc[f], s=36, c=ORANGE,
-                edgecolors='white', linewidths=0.5, zorder=5)
+    axe.scatter(csum_cap.loc[f], csum_e.loc[f], s=40, c=ORANGE,
+                edgecolors='white', linewidths=0.6, zorder=6)
 x5, y5 = float(csum_cap.loc[top5[-1]]), float(csum_e.loc[top5[-1]])
-axe.annotate('%d highest-gain farms: %.1f%% of capacity,\n%.1f%% of added energy'
-             % (len(top5), top5_cs, top5_es), xy=(x5, y5),
-             xytext=(6, 100), fontsize=9.9, color='#333333', ha='left', va='top',
-             arrowprops=dict(arrowstyle='->', color='#333333', lw=0.7),
-             bbox=dict(facecolor='white', edgecolor=BOX_EC, lw=0.5, alpha=0.95, pad=2.2))
+# 不用指示箭头：任何从橙点群拉到文本框的连线都会横穿蓝色区、被误读成第二条曲线；
+# 橙点的身份已由图例给出，框内文字自明
+axe.text(44, 97, '%d highest-gain farms:\n%.1f%% of capacity,\n%.1f%% of added energy'
+         % (len(top5), top5_cs, top5_es), fontsize=9.9, color='#333333',
+         ha='left', va='top', zorder=7, linespacing=1.35,
+         bbox=dict(facecolor='white', edgecolor=BOX_EC, lw=0.5, alpha=0.95, pad=2.2))
+axe.text(2.6, 6.2, 'top 5', fontsize=8.4, color=ORANGE, ha='left', va='center',
+         fontweight='bold', zorder=7)
 x10 = float(csum_cap.iloc[i10]); y10 = float(csum_e.iloc[i10])
+# 10% 装机处改用引导虚线读数（原先的长箭头横穿半张图并与上一条注释箭头交叉）
+axe.plot([10, 10], [-1.5, y10], ls=':', lw=1.0, color='#5b6770', zorder=5)
+axe.plot([-1.5, 10], [y10, y10], ls=':', lw=1.0, color='#5b6770', zorder=5)
+axe.scatter([10], [y10], s=26, c='#5b6770', linewidths=0, zorder=6)
 axe.annotate('10%% of capacity carries %.0f%%\nof added energy' % e_at_10,
-             xy=(10.0, y10), xytext=(52, 8), fontsize=9.9, color='#333333',
-             ha='left', va='bottom',
-             arrowprops=dict(arrowstyle='->', color='#333333', lw=0.7),
+             xy=(10.0, y10), xytext=(14, y10 - 4), fontsize=9.9, color='#333333',
+             ha='left', va='top',
              bbox=dict(facecolor='white', edgecolor=BOX_EC, lw=0.5, alpha=0.95, pad=2.2))
+axe.legend([mlines.Line2D([], [], color='#9aa3ab', lw=1.4, ls='--'),
+            mlines.Line2D([], [], marker='o', ls='', mfc=ORANGE, mec='white',
+                          mew=0.6, ms=6.5)],
+           ['Uniform distribution', '5 highest-gain farms'],
+           loc='lower right', bbox_to_anchor=(0.995, 0.02), fontsize=8.8,
+           handlelength=1.5, frameon=True, framealpha=0.95, borderpad=0.4,
+           labelspacing=0.35)
 for sp in ('top', 'right'):
     axe.spines[sp].set_visible(False)
 panel_label(axe, 'e', fs=16.7)
