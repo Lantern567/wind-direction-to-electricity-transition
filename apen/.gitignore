@@ -1,0 +1,5 @@
+data/
+verification_output/
+plotting/output/
+__pycache__/
+*.pyc

@@ -1,4 +1,17 @@
-# Wind-direction-to-electricity transition
+# Offshore wind array orientation assessment
+
+This repository contains the analysis code and derived results supporting **Prioritizing array orientation assessment in densely packed offshore wind farms**.
+
+- [Manuscript-specific analysis and reproduction instructions](apen/README.md)
+- [Versioned numerical archive and 600 dpi figures](https://github.com/Lantern567/wind-direction-to-electricity-transition/releases/tag/apen-reproducibility-20260927)
+- [Analysis code](apen/code/) and [derived result tables](apen/results/)
+- [Current plotting code](apen/plotting/)
+
+The versioned archive includes the meteorological joint probabilities, archived model power responses, configurations, and derived summaries used for the manuscript. The supplied verification entry point checks file integrity and recomputes energy summaries from those archived arrays. Rebuilding the original meteorological inputs and model responses additionally requires the cited DeepOWT and ERA5 data and the documented model environment.
+
+The manuscript-specific directory and release define the data version for this study. Other directories below retain earlier project work.
+
+## Earlier project framework
 
 本仓库用于推进“气候变化下风向格局演变对风电出力的影响研究”。项目参考 `Lantern567/renewable-energy-climate-risk-insurance` 的研究骨架，但这是一个独立新仓库：用于管理本项目的 Word 原稿、研究方案、数据设计、文献检索、图表规划和后续脚本。
 

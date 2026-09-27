@@ -1,0 +1,74 @@
+[
+  {
+    "path": "inputs/natural_earth/cultural/ne_50m_admin_0_boundary_lines_land.cpg",
+    "bytes": 5,
+    "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/cultural/ne_50m_admin_0_boundary_lines_land.dbf",
+    "bytes": 622162,
+    "sha256": "3b817d0866bc0e90032831ad0630125bf1fa3dcc7040bedc379605b9e7d59543",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/cultural/ne_50m_admin_0_boundary_lines_land.prj",
+    "bytes": 147,
+    "sha256": "3259f0e55290a82b1350646f604e8a7ee1e2136c0320a40fad838ab40819fff8",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/cultural/ne_50m_admin_0_boundary_lines_land.shp",
+    "bytes": 339696,
+    "sha256": "16950c1695e39b2721f0c19ecd3b4be6a13565c6c8cbe61b2b834694984a9c40",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/cultural/ne_50m_admin_0_boundary_lines_land.shx",
+    "bytes": 3220,
+    "sha256": "8d1bf4bd9bf7f1bb3c9d0167d56f1b748f04c4ceab5663688990aecd61955cd0",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/physical/ne_50m_land.cpg",
+    "bytes": 5,
+    "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/physical/ne_50m_land.dbf",
+    "bytes": 69709,
+    "sha256": "d082add78c82e01b9bf422df3143ad6fbe43ca1bcb798d12a334f9e001b67bc0",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/physical/ne_50m_land.prj",
+    "bytes": 143,
+    "sha256": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/physical/ne_50m_land.shp",
+    "bytes": 1050332,
+    "sha256": "140d1419f7ace66bf0ea8ceb068cab544d413170f4e8c48e0a11bde6c978b319",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/natural_earth/physical/ne_50m_land.shx",
+    "bytes": 11460,
+    "sha256": "c1b93ee40fe83d6322197251517c141c2c91970915ac61d7bf7a4821fc2a68d7",
+    "provenance": "Natural Earth 1:50m public-domain map data"
+  },
+  {
+    "path": "inputs/wp4c_jensen.npz",
+    "bytes": 18309,
+    "sha256": "dc38a503e4c66da2455c2723c19a089ba884caacca1c87232b746a24da4b3d8c",
+    "provenance": "Existing study-derived standard-layout coordinates"
+  },
+  {
+    "path": "inputs/wp9c_farm_metrics.csv",
+    "bytes": 47209,
+    "sha256": "0b73f4da71314f5da5d6b09143d97c136e72fea851214381b19381893815fc3b",
+    "provenance": "Existing study-derived site metadata"
+  }
+]

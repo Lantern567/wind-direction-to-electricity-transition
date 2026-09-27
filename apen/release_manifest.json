@@ -1,0 +1,12 @@
+{
+  "archive_name": "APEN_Reproducibility_20260927.zip",
+  "archive_sha256": "f30ff4da380f904c195d93ccf4e5be79ecbe1794a1dfd3830e29de959a5e1803",
+  "archive_files": 2811,
+  "manifest_files": 2809,
+  "repository_url": "https://github.com/Lantern567/wind-direction-to-electricity-transition",
+  "tag": "apen-reproducibility-20260927",
+  "date": "2026-09-27",
+  "figure_package": "APEN_Figures_600dpi_20260927.zip",
+  "figure_package_sha256": "9ab53b1fa5384ff4f3da2c90d69a30fcdf71289d1b9375ab7ef8edf408a6351b",
+  "scope": "Manuscript-specific analysis code, derived results, archived model arrays, and current 600 dpi figures"
+}

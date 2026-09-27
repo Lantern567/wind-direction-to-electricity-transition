@@ -1,0 +1,1030 @@
+{
+  "annual_geometries": [
+    {
+      "farm_id": 0,
+      "years": 11,
+      "unique_geometries": 7,
+      "n_max": 928
+    },
+    {
+      "farm_id": 1,
+      "years": 9,
+      "unique_geometries": 6,
+      "n_max": 588
+    },
+    {
+      "farm_id": 2,
+      "years": 11,
+      "unique_geometries": 6,
+      "n_max": 572
+    },
+    {
+      "farm_id": 3,
+      "years": 6,
+      "unique_geometries": 4,
+      "n_max": 441
+    },
+    {
+      "farm_id": 4,
+      "years": 6,
+      "unique_geometries": 5,
+      "n_max": 364
+    },
+    {
+      "farm_id": 5,
+      "years": 7,
+      "unique_geometries": 4,
+      "n_max": 339
+    },
+    {
+      "farm_id": 6,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 292
+    },
+    {
+      "farm_id": 7,
+      "years": 11,
+      "unique_geometries": 5,
+      "n_max": 284
+    },
+    {
+      "farm_id": 8,
+      "years": 4,
+      "unique_geometries": 4,
+      "n_max": 278
+    },
+    {
+      "farm_id": 9,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 267
+    },
+    {
+      "farm_id": 10,
+      "years": 11,
+      "unique_geometries": 6,
+      "n_max": 246
+    },
+    {
+      "farm_id": 11,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 246
+    },
+    {
+      "farm_id": 12,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 244
+    },
+    {
+      "farm_id": 13,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 215
+    },
+    {
+      "farm_id": 14,
+      "years": 8,
+      "unique_geometries": 6,
+      "n_max": 181
+    },
+    {
+      "farm_id": 15,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 182
+    },
+    {
+      "farm_id": 16,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 178
+    },
+    {
+      "farm_id": 17,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 175
+    },
+    {
+      "farm_id": 18,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 174
+    },
+    {
+      "farm_id": 19,
+      "years": 7,
+      "unique_geometries": 4,
+      "n_max": 171
+    },
+    {
+      "farm_id": 20,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 167
+    },
+    {
+      "farm_id": 21,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 162
+    },
+    {
+      "farm_id": 22,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 161
+    },
+    {
+      "farm_id": 23,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 156
+    },
+    {
+      "farm_id": 24,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 156
+    },
+    {
+      "farm_id": 25,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 152
+    },
+    {
+      "farm_id": 26,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 140
+    },
+    {
+      "farm_id": 27,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 138
+    },
+    {
+      "farm_id": 28,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 134
+    },
+    {
+      "farm_id": 29,
+      "years": 8,
+      "unique_geometries": 2,
+      "n_max": 131
+    },
+    {
+      "farm_id": 30,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 129
+    },
+    {
+      "farm_id": 31,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 129
+    },
+    {
+      "farm_id": 32,
+      "years": 6,
+      "unique_geometries": 3,
+      "n_max": 128
+    },
+    {
+      "farm_id": 33,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 109
+    },
+    {
+      "farm_id": 34,
+      "years": 11,
+      "unique_geometries": 6,
+      "n_max": 125
+    },
+    {
+      "farm_id": 35,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 120
+    },
+    {
+      "farm_id": 36,
+      "years": 8,
+      "unique_geometries": 1,
+      "n_max": 116
+    },
+    {
+      "farm_id": 37,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 114
+    },
+    {
+      "farm_id": 38,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 115
+    },
+    {
+      "farm_id": 39,
+      "years": 5,
+      "unique_geometries": 5,
+      "n_max": 114
+    },
+    {
+      "farm_id": 40,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 114
+    },
+    {
+      "farm_id": 41,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 102
+    },
+    {
+      "farm_id": 42,
+      "years": 3,
+      "unique_geometries": 3,
+      "n_max": 111
+    },
+    {
+      "farm_id": 43,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 111
+    },
+    {
+      "farm_id": 44,
+      "years": 3,
+      "unique_geometries": 2,
+      "n_max": 108
+    },
+    {
+      "farm_id": 45,
+      "years": 11,
+      "unique_geometries": 9,
+      "n_max": 106
+    },
+    {
+      "farm_id": 46,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 105
+    },
+    {
+      "farm_id": 47,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 104
+    },
+    {
+      "farm_id": 48,
+      "years": 6,
+      "unique_geometries": 2,
+      "n_max": 102
+    },
+    {
+      "farm_id": 49,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 101
+    },
+    {
+      "farm_id": 50,
+      "years": 8,
+      "unique_geometries": 3,
+      "n_max": 100
+    },
+    {
+      "farm_id": 51,
+      "years": 8,
+      "unique_geometries": 1,
+      "n_max": 91
+    },
+    {
+      "farm_id": 52,
+      "years": 6,
+      "unique_geometries": 6,
+      "n_max": 90
+    },
+    {
+      "farm_id": 53,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 90
+    },
+    {
+      "farm_id": 54,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 89
+    },
+    {
+      "farm_id": 55,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 88
+    },
+    {
+      "farm_id": 56,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 83
+    },
+    {
+      "farm_id": 57,
+      "years": 11,
+      "unique_geometries": 7,
+      "n_max": 80
+    },
+    {
+      "farm_id": 58,
+      "years": 7,
+      "unique_geometries": 2,
+      "n_max": 81
+    },
+    {
+      "farm_id": 59,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 80
+    },
+    {
+      "farm_id": 60,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 80
+    },
+    {
+      "farm_id": 61,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 80
+    },
+    {
+      "farm_id": 62,
+      "years": 4,
+      "unique_geometries": 4,
+      "n_max": 79
+    },
+    {
+      "farm_id": 63,
+      "years": 9,
+      "unique_geometries": 5,
+      "n_max": 75
+    },
+    {
+      "farm_id": 64,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 75
+    },
+    {
+      "farm_id": 65,
+      "years": 9,
+      "unique_geometries": 1,
+      "n_max": 75
+    },
+    {
+      "farm_id": 66,
+      "years": 5,
+      "unique_geometries": 2,
+      "n_max": 74
+    },
+    {
+      "farm_id": 67,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 73
+    },
+    {
+      "farm_id": 68,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 72
+    },
+    {
+      "farm_id": 69,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 71
+    },
+    {
+      "farm_id": 70,
+      "years": 3,
+      "unique_geometries": 1,
+      "n_max": 70
+    },
+    {
+      "farm_id": 71,
+      "years": 9,
+      "unique_geometries": 4,
+      "n_max": 69
+    },
+    {
+      "farm_id": 72,
+      "years": 7,
+      "unique_geometries": 3,
+      "n_max": 68
+    },
+    {
+      "farm_id": 73,
+      "years": 8,
+      "unique_geometries": 1,
+      "n_max": 67
+    },
+    {
+      "farm_id": 74,
+      "years": 8,
+      "unique_geometries": 3,
+      "n_max": 62
+    },
+    {
+      "farm_id": 75,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 62
+    },
+    {
+      "farm_id": 76,
+      "years": 3,
+      "unique_geometries": 1,
+      "n_max": 61
+    },
+    {
+      "farm_id": 77,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 60
+    },
+    {
+      "farm_id": 78,
+      "years": 5,
+      "unique_geometries": 3,
+      "n_max": 60
+    },
+    {
+      "farm_id": 79,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 60
+    },
+    {
+      "farm_id": 80,
+      "years": 8,
+      "unique_geometries": 2,
+      "n_max": 60
+    },
+    {
+      "farm_id": 81,
+      "years": 8,
+      "unique_geometries": 5,
+      "n_max": 59
+    },
+    {
+      "farm_id": 82,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 58
+    },
+    {
+      "farm_id": 83,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 58
+    },
+    {
+      "farm_id": 84,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 57
+    },
+    {
+      "farm_id": 85,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 56
+    },
+    {
+      "farm_id": 86,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 56
+    },
+    {
+      "farm_id": 87,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 56
+    },
+    {
+      "farm_id": 88,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 55
+    },
+    {
+      "farm_id": 89,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 55
+    },
+    {
+      "farm_id": 90,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 55
+    },
+    {
+      "farm_id": 91,
+      "years": 5,
+      "unique_geometries": 2,
+      "n_max": 55
+    },
+    {
+      "farm_id": 92,
+      "years": 6,
+      "unique_geometries": 2,
+      "n_max": 54
+    },
+    {
+      "farm_id": 93,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 39
+    },
+    {
+      "farm_id": 94,
+      "years": 3,
+      "unique_geometries": 1,
+      "n_max": 50
+    },
+    {
+      "farm_id": 95,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 50
+    },
+    {
+      "farm_id": 96,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 50
+    },
+    {
+      "farm_id": 97,
+      "years": 11,
+      "unique_geometries": 7,
+      "n_max": 49
+    },
+    {
+      "farm_id": 98,
+      "years": 7,
+      "unique_geometries": 4,
+      "n_max": 48
+    },
+    {
+      "farm_id": 99,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 48
+    },
+    {
+      "farm_id": 100,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 48
+    },
+    {
+      "farm_id": 101,
+      "years": 11,
+      "unique_geometries": 4,
+      "n_max": 47
+    },
+    {
+      "farm_id": 102,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 45
+    },
+    {
+      "farm_id": 103,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 41
+    },
+    {
+      "farm_id": 104,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 39
+    },
+    {
+      "farm_id": 105,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 40
+    },
+    {
+      "farm_id": 106,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 37
+    },
+    {
+      "farm_id": 107,
+      "years": 5,
+      "unique_geometries": 2,
+      "n_max": 39
+    },
+    {
+      "farm_id": 108,
+      "years": 3,
+      "unique_geometries": 1,
+      "n_max": 38
+    },
+    {
+      "farm_id": 109,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 38
+    },
+    {
+      "farm_id": 110,
+      "years": 3,
+      "unique_geometries": 2,
+      "n_max": 38
+    },
+    {
+      "farm_id": 111,
+      "years": 5,
+      "unique_geometries": 3,
+      "n_max": 36
+    },
+    {
+      "farm_id": 112,
+      "years": 5,
+      "unique_geometries": 2,
+      "n_max": 36
+    },
+    {
+      "farm_id": 113,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 36
+    },
+    {
+      "farm_id": 114,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 34
+    },
+    {
+      "farm_id": 115,
+      "years": 5,
+      "unique_geometries": 3,
+      "n_max": 35
+    },
+    {
+      "farm_id": 116,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 35
+    },
+    {
+      "farm_id": 117,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 32
+    },
+    {
+      "farm_id": 118,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 32
+    },
+    {
+      "farm_id": 119,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 32
+    },
+    {
+      "farm_id": 120,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 32
+    },
+    {
+      "farm_id": 121,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 30
+    },
+    {
+      "farm_id": 122,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 30
+    },
+    {
+      "farm_id": 123,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 30
+    },
+    {
+      "farm_id": 124,
+      "years": 9,
+      "unique_geometries": 3,
+      "n_max": 29
+    },
+    {
+      "farm_id": 125,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 28
+    },
+    {
+      "farm_id": 126,
+      "years": 4,
+      "unique_geometries": 3,
+      "n_max": 27
+    },
+    {
+      "farm_id": 127,
+      "years": 3,
+      "unique_geometries": 2,
+      "n_max": 27
+    },
+    {
+      "farm_id": 128,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 27
+    },
+    {
+      "farm_id": 129,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 22
+    },
+    {
+      "farm_id": 130,
+      "years": 5,
+      "unique_geometries": 2,
+      "n_max": 26
+    },
+    {
+      "farm_id": 131,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 25
+    },
+    {
+      "farm_id": 132,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 24
+    },
+    {
+      "farm_id": 133,
+      "years": 4,
+      "unique_geometries": 4,
+      "n_max": 24
+    },
+    {
+      "farm_id": 134,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 24
+    },
+    {
+      "farm_id": 135,
+      "years": 9,
+      "unique_geometries": 2,
+      "n_max": 23
+    },
+    {
+      "farm_id": 136,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 21
+    },
+    {
+      "farm_id": 137,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 21
+    },
+    {
+      "farm_id": 138,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 10
+    },
+    {
+      "farm_id": 139,
+      "years": 8,
+      "unique_geometries": 3,
+      "n_max": 20
+    },
+    {
+      "farm_id": 140,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 20
+    },
+    {
+      "farm_id": 141,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 18
+    },
+    {
+      "farm_id": 142,
+      "years": 9,
+      "unique_geometries": 1,
+      "n_max": 18
+    },
+    {
+      "farm_id": 143,
+      "years": 4,
+      "unique_geometries": 4,
+      "n_max": 16
+    },
+    {
+      "farm_id": 144,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 16
+    },
+    {
+      "farm_id": 145,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 14
+    },
+    {
+      "farm_id": 146,
+      "years": 2,
+      "unique_geometries": 2,
+      "n_max": 12
+    },
+    {
+      "farm_id": 147,
+      "years": 8,
+      "unique_geometries": 2,
+      "n_max": 12
+    },
+    {
+      "farm_id": 148,
+      "years": 9,
+      "unique_geometries": 2,
+      "n_max": 11
+    },
+    {
+      "farm_id": 149,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 11
+    },
+    {
+      "farm_id": 150,
+      "years": 7,
+      "unique_geometries": 1,
+      "n_max": 11
+    },
+    {
+      "farm_id": 151,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 10
+    },
+    {
+      "farm_id": 152,
+      "years": 11,
+      "unique_geometries": 3,
+      "n_max": 10
+    },
+    {
+      "farm_id": 153,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 10
+    },
+    {
+      "farm_id": 154,
+      "years": 11,
+      "unique_geometries": 2,
+      "n_max": 10
+    },
+    {
+      "farm_id": 155,
+      "years": 4,
+      "unique_geometries": 2,
+      "n_max": 9
+    },
+    {
+      "farm_id": 156,
+      "years": 1,
+      "unique_geometries": 1,
+      "n_max": 6
+    },
+    {
+      "farm_id": 157,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 7
+    },
+    {
+      "farm_id": 158,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 7
+    },
+    {
+      "farm_id": 159,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 7
+    },
+    {
+      "farm_id": 160,
+      "years": 9,
+      "unique_geometries": 1,
+      "n_max": 5
+    },
+    {
+      "farm_id": 161,
+      "years": 4,
+      "unique_geometries": 1,
+      "n_max": 5
+    },
+    {
+      "farm_id": 162,
+      "years": 8,
+      "unique_geometries": 1,
+      "n_max": 5
+    },
+    {
+      "farm_id": 163,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 5
+    },
+    {
+      "farm_id": 164,
+      "years": 8,
+      "unique_geometries": 1,
+      "n_max": 5
+    },
+    {
+      "farm_id": 165,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 4
+    },
+    {
+      "farm_id": 166,
+      "years": 3,
+      "unique_geometries": 1,
+      "n_max": 4
+    },
+    {
+      "farm_id": 167,
+      "years": 2,
+      "unique_geometries": 1,
+      "n_max": 3
+    },
+    {
+      "farm_id": 168,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 3
+    },
+    {
+      "farm_id": 169,
+      "years": 11,
+      "unique_geometries": 1,
+      "n_max": 3
+    },
+    {
+      "farm_id": 170,
+      "years": 5,
+      "unique_geometries": 1,
+      "n_max": 3
+    }
+  ]
+}
